@@ -3,11 +3,16 @@
 --Amby found somethin' pretty neat here, thank you CS50! again...
 -- Now watch as she forgets this all in a matter of days, poor thing.
 -- remind her to shut off VS Code ghost writer, this is getting annoying.
+
+
+-- global variables when capitalized like this
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
 
 VIRTUAL_WIDTH = 432
 VIRTUAL_HEIGHT = 243
+
+push = require 'push'
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
