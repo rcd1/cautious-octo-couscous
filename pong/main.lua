@@ -21,6 +21,8 @@ function love.load()
         vsync = true, --syncing rendering to monitor refresh rate, very handy against screen tearing
         fullscreen = false
     })
+    -- upscale has some other properties
+    push.setupScreen(VIRTUAL_WIDTH,VIRTUAL_HEIGHT, {upscale = "normal"})
 end
 
 function love.update(dt)
@@ -34,5 +36,10 @@ function love.keypressed(key)
 end
 
 function love.draw()
-    love.graphics.printf("Hello, Pong!", 0, WINDOW_HEIGHT / 2 - 6, WINDOW_WIDTH, 'center')
+    -- open up the virtual screen
+    push.start()
+    -- Gotta switch to virtual graphics now!
+    love.graphics.printf("Hello, Pong!", 0, VIRTUAL_HEIGHT / 2 - 6, VIRTUAL_WIDTH, 'center')
+    push.finish()
+    -- that's everything we want to draw!
 end
