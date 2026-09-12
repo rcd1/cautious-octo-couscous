@@ -19,6 +19,9 @@ function love.load()
     largeFont = love.graphics.newFont('font.ttf', 32)
     smallFont = love.graphics.newFont('font.ttf', 8)
     
+    player1Score = 0
+    player2Score = 0
+
     love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT, {
         resizable = false,
         vsync = true, --syncing rendering to monitor refresh rate, very handy against screen tearing
@@ -43,11 +46,12 @@ function love.draw()
     push.start()
     -- RGBA floating point values my beloved
     -- clears screen and covers it in this color
-    love.graphics.clear(45/255,50/255,20/255, 1)
+    love.graphics.clear(40/255,45/255,52/255, 1)
    
     love.graphics.setFont(largeFont)
     -- Gotta switch to virtual graphics now!
-    -- love.graphics.printf('Hello, Pong!', 0, VIRTUAL_HEIGHT / 2 - 16, VIRTUAL_WIDTH, 'center')
+    love.graphics.print(tostring(player1Score), VIRTUAL_WIDTH / 2 - 50, VIRTUAL_HEIGHT / 2 - 80)
+    love.graphics.print(tostring(player2Score), VIRTUAL_WIDTH / 2 + 30, VIRTUAL_HEIGHT / 2 - 80)
     
     -- paddle 1
     love.graphics.rectangle('fill', 10, 10, 5, 20)
