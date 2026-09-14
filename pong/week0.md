@@ -20,3 +20,10 @@ everyone has their version of x and y, ours is such that pos x goes right and po
 I'm learning so much about how to draw rectangles in this program that cna only draw rectangles since it's a pixely pal.
 
 that and how to make a virtual canvas that applies a custom resolution and scales it to the monitor's pixel density. through filtering it can make our 400X300 whatever resolution game look nice and crisp on my 1080p screen. Thank you push library and global constants!
+
+>math.randomseed(num)
+>os.time()
+returns in seconds the time since 0 in Unix Time
+>math.random(min,max)
+> math.min(num1, num2)
+> math.max(num1, num2)
