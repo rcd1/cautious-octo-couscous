@@ -16,3 +16,7 @@ renders
 everyone has their version of x and y, ours is such that pos x goes right and pos y goes down (top left corner, godot-esque?)
 ### Coordinate system relates to the literal pixels on your screen (triplets?RGB pixels?)
 >love.graphics.printf(text, x, y, [width], [align])
+
+I'm learning so much about how to draw rectangles in this program that cna only draw rectangles since it's a pixely pal.
+
+that and how to make a virtual canvas that applies a custom resolution and scales it to the monitor's pixel density. through filtering it can make our 400X300 whatever resolution game look nice and crisp on my 1080p screen. Thank you push library and global constants!
