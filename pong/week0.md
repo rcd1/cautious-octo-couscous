@@ -24,6 +24,11 @@ that and how to make a virtual canvas that applies a custom resolution and scale
 >math.randomseed(num)
 >os.time()
 returns in seconds the time since 0 in Unix Time
->math.random(min,max)
+> math.random(min,max)
 > math.min(num1, num2)
 > math.max(num1, num2)
+
+## Update 5: The Class Update
+- classes containerize data into attributes and methods.
+- rather than having **ballX** and **paddle1X** and **paddle2X**, we'll see how to get some of the clutter out of our main.lua. 
+### Other component diagrams: ECS (Entity Component System),
