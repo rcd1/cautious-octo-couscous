@@ -31,4 +31,16 @@ returns in seconds the time since 0 in Unix Time
 ## Update 5: The Class Update
 - classes containerize data into attributes and methods.
 - rather than having **ballX** and **paddle1X** and **paddle2X**, we'll see how to get some of the clutter out of our main.lua. 
-### Other component diagrams: ECS (Entity Component System),
+#### Other component diagrams: ECS (Entity Component System),
+
+### Classes and some etiquitte
+- need to require class.lua as a global object
+> Class = require 'class'
+- need to require custom classes without making them a global var
+> require 'Paddle'
+- calling method of an object has the syntax
+> class:method(params)
+- we're straight up making signals in this now
+> totally wicked
+- there are coders in this life who have paved the path for you already, may as well appreciate while moving forward.
+> they're so cool you know.
