@@ -44,3 +44,6 @@ returns in seconds the time since 0 in Unix Time
 > totally wicked
 - there are coders in this life who have paved the path for you already, may as well appreciate while moving forward.
 > they're so cool you know.
+
+## 9/21/2026
+Awake a little on the *having not slept yet* side of things, i know i should but i'm just scared of dropping it so soon. i want to keep going, i havent in a couple of days and that's my fault for getting so lost in my socials.

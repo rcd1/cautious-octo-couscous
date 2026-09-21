@@ -95,7 +95,14 @@ function love.draw()
     love.graphics.clear(40/255,45/255,52/255, 1)
    
     love.graphics.setFont(largeFont)
-    -- Gotta switch to virtual graphics now!
+    stateString = ""
+    if gameState == 'start' then
+        stateString = "Hello start state"
+    else
+        stateString = "hello play state" 
+    end
+        -- Gotta switch to virtual graphics now!
+    love.graphics.print(stateString, VIRTUAL_WIDTH *.1, VIRTUAL_HEIGHT * .75)
     love.graphics.print(tostring(player1Score), VIRTUAL_WIDTH / 2 - 50, VIRTUAL_HEIGHT / 2 - 80)
     love.graphics.print(tostring(player2Score), VIRTUAL_WIDTH / 2 + 30, VIRTUAL_HEIGHT / 2 - 80)
     
