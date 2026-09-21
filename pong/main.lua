@@ -7,6 +7,7 @@ push = require 'push'
 Class = require 'class'
 require 'Paddle'
 require 'Ball'
+require 'Scoreboard'
 
 
 -- global variables when capitalized like this
@@ -35,13 +36,13 @@ function love.load()
     -- upscale has some other properties
     push.setupScreen(VIRTUAL_WIDTH,VIRTUAL_HEIGHT, {upscale = 'normal'})
     
-    player1Score = 0
-    player2Score = 0
 
     player1 = Paddle(10, 10, 5, 20)
     player2 = Paddle(VIRTUAL_WIDTH-10, VIRTUAL_HEIGHT-30, 5, 20)
 
     ball = Ball(VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2, 4, 4)
+    scoreboard = Scoreboard()
+    scoreboard:reset() -- just in case?
 
     gameState = 'start'
 end
@@ -103,12 +104,10 @@ function love.draw()
     end
         -- Gotta switch to virtual graphics now!
     love.graphics.print(stateString, VIRTUAL_WIDTH *.1, VIRTUAL_HEIGHT * .75)
-    love.graphics.print(tostring(player1Score), VIRTUAL_WIDTH / 2 - 50, VIRTUAL_HEIGHT / 2 - 80)
-    love.graphics.print(tostring(player2Score), VIRTUAL_WIDTH / 2 + 30, VIRTUAL_HEIGHT / 2 - 80)
-    
     player1:render()
     player2:render()
     ball:render()
+    scoreboard:render()
 
     push.finish()
     -- that's everything we want to draw!
