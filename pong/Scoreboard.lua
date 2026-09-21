@@ -14,18 +14,18 @@ end
 doing it like this instead of an update function? maybe?
 SI like awarding pts this way i hope.]]
 function Scoreboard:scoreP1(amt)
-    self.player1Score = player1Score + amt
+    self.player1Score = self.player1Score + amt
 end
 function Scoreboard:scoreP2(amt)
-    self.player2Score = player1Score + amt
+    self.player2Score = self.player1Score + amt
 end
 
 function Scoreboard:render() 
-    love.graphics.print(tostring(player1Score), VIRTUAL_WIDTH / 2 - 50, VIRTUAL_HEIGHT / 2 - 80)
-    love.graphics.print(tostring(player2Score), VIRTUAL_WIDTH / 2 + 30, VIRTUAL_HEIGHT / 2 - 80)
+    love.graphics.print(tostring(self.player1Score), VIRTUAL_WIDTH / 2 - 50, VIRTUAL_HEIGHT / 2 - 80)
+    love.graphics.print(tostring(self.player2Score), VIRTUAL_WIDTH / 2 + 30, VIRTUAL_HEIGHT / 2 - 80)
 end
 
 function Scoreboard:reset()
-    player1Score = 0
-    player2Score = 0
+    self.player1Score = 0
+    self.player2Score = 0
 end

@@ -41,9 +41,7 @@ function love.load()
     player2 = Paddle(VIRTUAL_WIDTH-10, VIRTUAL_HEIGHT-30, 5, 20)
 
     ball = Ball(VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2, 4, 4)
-    scoreboard = Scoreboard()
-    scoreboard:reset() -- just in case?
-
+    scoreboard = Scoreboard(0,0) -- got it to work!
     gameState = 'start'
 end
 
@@ -83,6 +81,7 @@ function love.keypressed(key)
         else 
             gameState = 'start'
                 ball:reset()
+                scoreboard:reset()
         end
     end
 
