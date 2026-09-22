@@ -28,6 +28,8 @@ function love.load()
         vsync = true, --syncing rendering to monitor refresh rate, very handy against screen tearing
         fullscreen = false
     })
+    love.window.setTitle("Pong")
+    
     
     largeFont = love.graphics.newFont('font.ttf', 32)
     smallFont = love.graphics.newFont('font.ttf', 8) 
@@ -93,21 +95,31 @@ function love.draw()
     -- RGBA floating point values my beloved
     -- clears screen and covers it in this color
     love.graphics.clear(40/255,45/255,52/255, 1)
-   
-    love.graphics.setFont(largeFont)
+    love.graphics.setFont(smallFont)
     stateString = ""
     if gameState == 'start' then
         stateString = "Hello start state"
     else
         stateString = "hello play state" 
     end
-        -- Gotta switch to virtual graphics now!
+    -- Gotta switch to virtual graphics now!
     love.graphics.print(stateString, VIRTUAL_WIDTH *.1, VIRTUAL_HEIGHT * .75)
     player1:render()
     player2:render()
     ball:render()
+    love.graphics.setFont(largeFont)
     scoreboard:render()
+    displayFPS()
 
     push.finish()
     -- that's everything we want to draw!
+end
+
+function displayFPS()
+    -- will display FPS in topleft of screen
+    love.graphics.setFont(smallFont)
+    love.graphics.setColor(0, 1, 0, 1)
+    -- .. is a concatenate? yep. gotcha. 
+    love.graphics.print('FPS ' .. tostring(love.timer.getFPS(), 10, 10))
+    love.graphics.setColor(1,1,1,1)
 end
